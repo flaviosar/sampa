@@ -125,6 +125,189 @@
             opacity: 1;
             transform: scale(1.1);
         }
+        /* Mobile layout fixes for Swap Protocol and Talk to SAMPA */
+        @media (max-width: 767px) {
+            #buy,
+            #contact {
+                overflow-x: hidden;
+            }
+
+            #buy .grid {
+                gap: 3rem;
+            }
+
+            #buy [data-aos="fade-right"],
+            #buy [data-aos="fade-left"],
+            #contact .fluent-card > div {
+                min-width: 0;
+            }
+
+            #buy h2,
+            #contact h2 {
+                font-size: 2.25rem;
+                line-height: 1.1;
+            }
+
+            #buy .bg-sampa-navy {
+                padding: 1.25rem;
+                border-width: 4px;
+                border-radius: 2rem;
+            }
+
+            #buy .bg-sampa-navy > .flex.justify-between.items-center {
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            #buy .bg-sampa-navy .p-6 {
+                padding: 1rem;
+                border-radius: 1.5rem;
+            }
+
+            #buy .bg-sampa-navy .flex.justify-between.text-xs {
+                flex-wrap: wrap;
+                gap: 0.25rem 0.75rem;
+                font-size: 0.625rem;
+            }
+
+            #buy input {
+                min-width: 0;
+                font-size: 1.5rem;
+            }
+
+            #buy select {
+                max-width: 42%;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            #buy .bg-sampa-navy > button,
+            #contact form button {
+                padding: 1.25rem 1rem;
+                letter-spacing: 0.15em;
+                font-size: 0.75rem;
+            }
+
+            #contact .fluent-card > div {
+                padding: 1.5rem;
+            }
+
+            #contact h2 {
+                margin-bottom: 1.5rem;
+            }
+
+            #contact .text-white\/70 {
+                margin-bottom: 2rem;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            #contact .flex.items-center.gap-6 {
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            #contact .flex.items-center.gap-6 > div:last-child {
+                min-width: 0;
+            }
+
+            #contact .flex.gap-6.mt-16 {
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 3rem;
+            }
+
+            #contact input,
+            #contact textarea {
+                min-width: 0;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        /* Final mobile overflow corrections based on device captures */
+        @media (max-width: 767px) {
+            #buy .bg-sampa-navy,
+            #contact .fluent-card,
+            #contact .fluent-card > div {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            #buy .bg-sampa-navy .flex.justify-between.items-center,
+            #buy .bg-sampa-navy .flex.justify-between.text-xs {
+                width: 100%;
+                min-width: 0;
+            }
+
+            #buy .bg-sampa-navy .flex.justify-between.items-center > input,
+            #buy .bg-sampa-navy .flex.justify-between.items-center > select {
+                min-width: 0;
+                box-sizing: border-box;
+            }
+
+            #buy .bg-sampa-navy .flex.justify-between.items-center > input {
+                flex: 1 1 55%;
+                width: 55%;
+            }
+
+            #buy .bg-sampa-navy .flex.justify-between.items-center > select {
+                flex: 0 1 42%;
+                width: 42%;
+            }
+
+            #buy .bg-sampa-navy .flex.justify-between.items-center > span {
+                flex: 0 1 auto;
+                max-width: 42%;
+                white-space: normal;
+            }
+
+            #contact .fluent-card > div {
+                padding: 1.25rem !important;
+            }
+
+            #contact h2 {
+                font-size: clamp(2rem, 10vw, 3rem);
+                overflow-wrap: anywhere;
+            }
+
+            #contact .text-white\/70,
+            #contact .text-xl,
+            #contact [data-i18n="contact.subtitle"] {
+                max-width: 100%;
+                overflow-wrap: anywhere;
+                word-break: break-word;
+            }
+
+            #contact .text-xl {
+                font-size: 1rem;
+                line-height: 1.35;
+            }
+
+            #contact form,
+            #contact form > div,
+            #contact input,
+            #contact textarea,
+            #contact form button {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                box-sizing: border-box;
+            }
+
+            #contact input,
+            #contact textarea {
+                font-size: 1rem;
+                overflow-wrap: anywhere;
+            }
+
+            #contact form button {
+                white-space: normal;
+                line-height: 1.25;
+            }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-sampa-blue selection:text-white">
@@ -624,9 +807,9 @@
                 </div>
                 
                 <!-- CVM AND LEGAL INFO -->
-                <div class="max-w-4xl space-y-8 mb-12">
+                <div class="max-w-4xl space-y-0 mb-12">
                     <p class="text-sm font-black text-black uppercase tracking-widest border-y border-sampa-border py-4" data-i18n="footer.cvm">
-                        Tokens de utilidade para serviços e pagamentos, conforme regulamentação da CVM.
+                        Utility tokens for services and payments, in accordance with CVM regulations.
                     </p>
                     <p class="text-base font-bold text-sampa-navy leading-relaxed" data-i18n="footer.description">
                         SAMPA is a utility token for cashback on services and products, it is not an investment and does not guarantee financial return.
@@ -716,7 +899,7 @@
                 "swap.widgetTitle": "Swap Protocol", "swap.pay": "You Pay", "swap.balance": "Balance", "swap.receive": "You Receive", "swap.estimated": "Estimated", "swap.btn": "Swap for SAMPA", "swap.disclaimer": "Demonstrative Widget • Subject to Network Fees (Gas)",
                 "contact.titleStart": "Talk to", "contact.subtitle": "Questions about partnerships, merchant integration, or institutional support? Our team is ready to help.",
                 "contact.emailLabel": "Official Email", "contact.locationLabel": "Location", "contact.formName": "Full Name", "contact.formEmail": "Email", "contact.formMsg": "Message", "contact.formBtn": "Send Message", "contact.success": "Message sent successfully!",
-                "footer.cvm": "Tokens de utilidade para serviços e pagamentos, conforme regulamentação da CVM.",
+                "footer.cvm": "Utility tokens for services and payments, in accordance with CVM regulations.",
                 "footer.description": "SAMPA is a utility token for cashback on services and products, it is not an investment and does not guarantee financial return.",
                 "footer.copy": "© 2026 in-ADM Serviços Digitais, project developer.", "footer.custody": "Non-custodial.",
                 "wallet.title": "Connect Wallet", "wallet.subtitle": "Select your preferred Web3 provider.", "wallet.footer": "By connecting, you agree to our Terms of Use."
